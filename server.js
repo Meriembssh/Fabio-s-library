@@ -4,6 +4,10 @@ if(process.env.NODE_ENV !== 'production') {
 const express = require('express')
 const app = express()
 
+//body parser:
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({limit:'10mb', extended:false}))
+
 //views
 const expressLayouts = require('express-ejs-layouts')
 app.set('view engine', 'ejs')
